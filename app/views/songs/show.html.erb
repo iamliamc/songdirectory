@@ -1,0 +1,23 @@
+<div class="header">
+  <div class="container">
+    <h1>Song Directory</h1>
+  </div>
+</div>
+
+<div class="song">
+  <div class="container">
+  
+    <!-- Your code here -->
+<div class="song"> 
+  <p class="content"><%= @songs.title %></p>
+  <p class="content"><%= @songs.directory %></p>
+  <p class="content"><%= @songs.tempo %></p> 
+  <p class="content"><%= @songs.key %></p>
+  <p class="content"><%= @songs.sample %></p>
+  <p class="content"><%= @songs.id %></p> 
+  <p class="time"><%= @songs.created_at %></p> 
+</div>
+  <%= link_to "delete", @songs, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+</div>
+</div>

@@ -8,6 +8,16 @@ class SongsController < ApplicationController
     @songs = Song.new
   end
   
+  def show
+    @songs = Song.find(params[:id])
+  end
+  
+  def destroy
+    @songs = Song.find(params[:id])
+    @songs.destroy
+    redirect_to '/songs'
+  end
+  
   def create 
   @songs = Song.new(song_params) 
   if @songs.save 
