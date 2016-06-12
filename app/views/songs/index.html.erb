@@ -1,0 +1,23 @@
+<div class="header">
+  <div class="container">
+    <h1>Song Directory</h1>
+  </div>
+</div>
+
+<div class="song">
+  <div class="container">
+  
+    <!-- Your code here -->
+<% @songs.each do |song| %> 
+<div class="song"> 
+  <p class="content"><%= song.title %></p>
+  <p class="content"><%= song.directory %></p>
+  <p class="content"><%= song.tempo %></p> 
+  <p class="content"><%= song.key %></p>
+  <p class="content"><%= song.sample %></p> 
+  <p class="time"><%= song.created_at %></p> 
+</div> 
+<% end %>
+    <%= link_to 'New Song', '/songs/new' %>
+  </div>
+</div>
