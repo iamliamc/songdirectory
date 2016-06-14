@@ -18,6 +18,20 @@ class SongsController < ApplicationController
     redirect_to '/songs'
   end
   
+  def edit
+    @songs = Song.find(params[:id])
+  end
+  
+  def update
+    @songs = Song.find(params[:id])
+    if @songs.update_attributes(song_params)
+      flash[:success] = "Song updated"
+      redirect_to '/songs'
+    else
+      render 'edit'
+    end
+  end
+  
   def create 
   @songs = Song.new(song_params) 
   if @songs.save 
