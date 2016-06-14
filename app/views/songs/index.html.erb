@@ -10,13 +10,7 @@
     <!-- Your code here -->
 <% @songs.each do |song| %> 
 <div class="song"> 
-  <p class="content"><%= song.title %></p>
-  <p class="content"><%= song.directory %></p>
-  <p class="content"><%= song.tempo %></p> 
-  <p class="content"><%= song.key %></p>
-  <p class="content"><%= song.sample %></p>
-  <p class ="content"><%= song.id%></p>
-  <p class="time"><%= song.created_at %></p> 
+  <p class="content">TITLE: <%= link_to song.title, song%> ID: <%=song.id%></p>
 </div> 
 <% end %>
     <%= link_to 'New Song', '/songs/new' %>

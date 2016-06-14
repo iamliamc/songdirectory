@@ -17,7 +17,8 @@
   <p class="content"><%= @songs.id %></p> 
   <p class="time"><%= @songs.created_at %></p> 
 </div>
-  <%= link_to "delete", @songs, method: :delete,
+  <%= link_to "Delete", @songs, method: :delete,
                                        data: { confirm: "You sure?" } %>
+  <%= link_to "Edit", [:edit, @songs] %>
 </div>
 </div>
