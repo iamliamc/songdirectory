@@ -21,4 +21,10 @@
                                        data: { confirm: "You sure?" } %>
   <%= link_to "Edit", [:edit, @songs] %>
 </div>
+<% @comments.each do |c| %>
+  <div>
+  <p><%= c.title%></p>
+  <p><%= c.content%></p>
+  </div>
+<%end%>
 </div>

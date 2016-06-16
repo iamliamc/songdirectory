@@ -10,6 +10,7 @@ class SongsController < ApplicationController
   
   def show
     @songs = Song.find(params[:id])
+    @comments = @songs.comments
   end
   
   def destroy
