@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160616010455) do
+ActiveRecord::Schema.define(version: 20160618230554) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "title"
@@ -22,6 +22,25 @@ ActiveRecord::Schema.define(version: 20160616010455) do
   end
 
   add_index "comments", ["song_id"], name: "index_comments_on_song_id"
+
+  create_table "contributors", force: :cascade do |t|
+    t.string   "name"
+    t.string   "band"
+    t.integer  "age"
+    t.string   "bio"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "parts", force: :cascade do |t|
+    t.integer  "song_id"
+    t.integer  "contributor_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "parts", ["contributor_id"], name: "index_parts_on_contributor_id"
+  add_index "parts", ["song_id"], name: "index_parts_on_song_id"
 
   create_table "songs", force: :cascade do |t|
     t.text     "title"
