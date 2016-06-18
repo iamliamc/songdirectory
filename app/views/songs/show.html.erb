@@ -26,7 +26,8 @@
   <div>
   <p>Title: <%= c.title%></p>
   <p>Body: <br><%= c.content%></p>
-  <p><%= link_to "Comment Page", comment_path(c) %></p>
+  <p><%= link_to "Edit", edit_comment_path(c) %></p>
+  <p><%= link_to "Delete", c, method: :delete, data: { confirm: "You sure?" } %></p>
   </div>
 <%end%>
 <div><%= link_to "New Comment", new_comment_path(song_id: @songs.id, song_title: @songs.title)%></div>
