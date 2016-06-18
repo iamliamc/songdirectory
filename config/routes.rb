@@ -10,7 +10,10 @@ Rails.application.routes.draw do
   get '/songs' => 'songs#index'
   get '/songs/new' => 'songs#new'
   post '/songs' => 'songs#create'
+  #This was fucking up the resources for comments - forcing an error - this helped dhttp://stackoverflow.com/questions/25758387/activerecordrecordnotfound-couldnt-find-contact-with-id-new
+  #get '/comments/:id' => 'comments#show', as: :comment
   resources :songs
+  resources :comments
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

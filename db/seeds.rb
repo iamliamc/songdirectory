@@ -9,3 +9,5 @@ s1 = Song.create(title: 'Riders', directory: 'C:\Users\TPB\Sounds\Riders.rpt', t
 s2 = Song.create(title: 'Hustle', directory: 'C:\Users\TPB\Sounds\Hustle.rpt', tempo: 86, key: "Bb Maj", sample: "N/A")
 c1 = Comment.create(title: 'Baller', content: 'Pat is a baller he should write on this track', song_id: s1.id)
 c2 = Comment.create(title: 'Sucky', content: 'This one is lame', song_id: s2.id)
+c3 = Comment.create(title: 'Tata', content: 'Boom boom boom I want you in my room', song_id: s1.id)
+c4 = Comment.create(title: 'Nanana', content: 'Creative text here', song_id: s2.id)

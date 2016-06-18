@@ -1,0 +1,22 @@
+<div class="header">
+  <div class="container">
+    <h1>Add Comment to <%= params[:song_title] %> Song ID: <%= params[:song_id] %></h1>
+  </div>
+</div>
+
+<div class="comment">
+  <div class="container">
+<%= form_for(@comments) do |c| %>  
+  <div class="field"> 
+    <%= c.label :title %><br> 
+    <%= c.text_area :title %><br>
+    <%= c.label :content %><br> 
+    <%= c.text_area :content %><br>
+    <%= c.hidden_field :song_id, value: params[:song_id] %>
+  </div> 
+  <div class="actions"> 
+    <%= c.submit "Create" %> 
+  </div> 
+<% end %>
+  </div>
+</div>
