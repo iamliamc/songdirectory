@@ -32,8 +32,9 @@ class CommentsController < ApplicationController
   
   def destroy
     @comments = Comment.find(params[:id])
+    @commentsID = @comments.song_id.to_s
     @comments.destroy
-    redirect_to '/songs/'
+    redirect_to '/songs/' + @commentsID
   end
   
   private 
