@@ -1,0 +1,33 @@
+<div class="header">
+  <div class="container">
+    <h1>Add Contributor Page</h1>
+  </div>
+</div>
+
+<div class="contributor">
+  <div class="container">
+<%= form_for(@contributors) do |f| %>  
+  <div class="field"> 
+    <%= f.label :name %><br> 
+    <%= f.text_area :name %><br>
+    <%= f.label :band %><br> 
+    <%= f.text_area :band %><br>
+    <%= f.label :age %><br> 
+    <%= f.text_area :age %><br>
+    <%= f.label :bio %><br> 
+    <%= f.text_area :bio %><br>
+    <p>Assign Contributor Status to Song:</p>
+    <select name="song[contributor_id]">
+        <% Song.all.each do |s| %>
+          <option value="<%= s.id %>"> <%= s.title %></option>
+          <%end%>
+    </select>
+        <!-- Want to be able to add contributors upon creation of new song -->
+    <!-- # f.collection_select :contributor, @contributors, :id, :name, include_blank: false -->
+  </div> <br>
+  <div class="actions"> 
+    <%= f.submit "Create" %> 
+  </div> 
+<% end %>
+  </div>
+</div>

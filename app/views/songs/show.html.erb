@@ -6,8 +6,7 @@
 
 <div class="song">
   <div class="container">
-  
-    <!-- Your code here -->
+
 <div class="song"> 
   <p class="content"><%= @songs.title %></p>
   <p class="content"><%= @songs.directory %></p>
@@ -21,6 +20,11 @@
                                        data: { confirm: "You sure?" } %>
   <%= link_to "Edit", [:edit, @songs] %>
 </div>
+<h2>Contributors</h2>
+<% @contributors.each do |c| %>
+<p class="content"> <%= link_to c.name, c%></p>
+<%end%>
+
 <h2>Comments</h2>
 <% @comments.each do |c| %>
   <div>

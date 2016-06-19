@@ -6,11 +6,13 @@ class SongsController < ApplicationController
   
   def new
     @songs = Song.new
+    @contributors = Contributor.all
   end
   
   def show
     @songs = Song.find(params[:id])
     @comments = @songs.comments
+    @contributors = @songs.contributors
   end
   
   def destroy
