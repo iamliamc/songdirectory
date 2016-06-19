@@ -12,9 +12,12 @@
   <p class="content">Current Band: <%= @contributor.band %></p>
   <p class="content">Contributor ID: <%= @contributor.id %></p>
   <p class="content">Bio: <%= @contributor.bio %></p> 
+  <%= link_to "Delete Contributor", @contributor, method: :delete,
+                                       data: { confirm: "You sure?" } %>
   <h3>Songs:</h3>
   <% @contributor.songs.each do |song| %>
   <p class="content">TITLE: <%= link_to song.title, song%> ID: <%=song.id%></p>
   <% end %>
+</div>
 </div>
 </div>

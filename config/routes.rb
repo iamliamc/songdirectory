@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :songs
   resources :comments
   resources :contributors
+  resources :parts
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

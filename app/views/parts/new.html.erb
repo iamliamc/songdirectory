@@ -1,0 +1,22 @@
+    <div> 
+    <h1>Assign new Contributor</h1>
+    <%= form_for(@parts) do |p| %>
+  
+    <p> Song:</p>
+    <select name="song">
+        <% Song.all.each do |s| %>
+          <option value="<%= s.id %>"> <%= s.title %></option>
+          <%end%>
+    </select>
+    <p> Contributor:</p>
+    <select name="contributor_id">
+        <% Contributor.all.each do |c| %>
+          <option value="<%= c.id %>"> <%= c.name %></option>
+          <%end%>
+    </select><br>
+    <div class="actions"> 
+    <%= p.submit "Create" %> 
+    </div> 
+    <%end%>
+    
+    </div>

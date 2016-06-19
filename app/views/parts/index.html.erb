@@ -1,0 +1,17 @@
+<div class="header">
+  <div class="container">
+    <h1>Contributor Directory - Maintenance</h1>
+  </div>
+</div>
+
+<div class="song">
+  <div class="container">
+  
+    <!-- Your code here -->
+<% @parts.each do |part| %> 
+<div class="song"> 
+  <p class="content">Song: <%= Song.find(part.song_id).title%> Contributor: <%= Contributor.find(part.contributor_id).name%></p>
+</div> 
+<% end %>
+  </div>
+</div>
