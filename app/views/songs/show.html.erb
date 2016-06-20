@@ -23,6 +23,8 @@
 <h2>Contributors</h2>
 <% @contributors.each do |c| %>
 <p class="content"> <%= link_to c.name, c%></p>
+<%#= link_to "Delete", Part.where(contributor_id: c.id, song_id: @songs.id), method: delete, data: {confirm: "You sure?"} %>
+<%= link_to "Delete", {:controller => :parts, :action => 'destroy', :id => Part.find_by(contributor_id: c.id, song_id: @songs.id) }, :method => :delete, data: { confirm: "You sure?" } %>
 <%end%>
 
 <h2>Comments</h2>

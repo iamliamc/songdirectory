@@ -5,6 +5,10 @@ class PartsController < ApplicationController
     #@contributor = Contributor.find(params[:contributor_id])
   end
 
+  def show
+      @parts = Part.find(params[:id])
+  end
+  
   def create
     @contributors = Contributor.find(params[:contributor_id])
     @song = Song.find(params[:song])
@@ -16,6 +20,15 @@ class PartsController < ApplicationController
   def index
     @parts = Part.all
   end
+  
+  def destroy
+    @parts = Part.find(params[:id])
+    @part_song = @parts.song_id
+    @parts.destroy
+    redirect_to '/songs/' + @part_song.to_s
+  end
+
+
 
 
   private 

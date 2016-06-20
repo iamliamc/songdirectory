@@ -1,0 +1,13 @@
+<div class="header">
+  <div class="container">
+    <h1>Parts </h1>
+  </div>
+</div>
+
+<div class="part">
+  <div class="container">
+
+<div class="part"> 
+  <p class="content">Song ID: <%= @parts.song_id %> <%= Song.find(@parts.song_id).title %></p>
+  <p class="content">Contributor ID: <%= @parts.contributor_id %> <%= Contributor.find(@parts.contributor_id).name %></p>
+</div>
