@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :require_user
   def new
     @comments = Comment.new
   end

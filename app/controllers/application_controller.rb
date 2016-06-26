@@ -17,8 +17,7 @@ class ApplicationController < ActionController::Base
   def require_user
     if current_user
     else
-      #flash[:error] = "You must be logged in to access this section"
-      redirect_to login_path, :flash => { :error => "You must be logged in to access this section" }
+      redirect_to login_path, :flash => { :error => "You must be logged in to access this section!" }
     end
   end
       
