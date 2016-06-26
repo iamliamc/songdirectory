@@ -1,7 +1,11 @@
 <div class="login">
 	<div class="container">
 		<div class="form">
-
+      <div>
+        <% if flash[:error] %>
+          <p class='error'><%= flash[:error] %></p>
+        <%end%>
+      </div>
       <h1>Log in</h1>
       <!-- We use For the login form, we don't have a Session model, so we refer to the parameters shown. --> 
 			<%= form_for(:session, url: login_path) do |f| %> 
