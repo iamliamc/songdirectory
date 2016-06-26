@@ -3,14 +3,19 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'songs#index'
+  root 'sessions#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
   get '/songs' => 'songs#index'
   get '/songs/new' => 'songs#new'
   post '/songs' => 'songs#create'
-  #This was fucking up the resources for comments - forcing an error - this helped dhttp://stackoverflow.com/questions/25758387/activerecordrecordnotfound-couldnt-find-contact-with-id-new
+  get '/signup'  => 'users#new' 
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
+  resources :users
+  #This was messing up the resources for comments - forcing an error - this helped dhttp://stackoverflow.com/questions/25758387/activerecordrecordnotfound-couldnt-find-contact-with-id-new
   #get '/comments/:id' => 'comments#show', as: :comment
   resources :songs
   resources :comments

@@ -1,4 +1,6 @@
 class SongsController < ApplicationController
+  before_action :require_user
+  #before_action :require_user, only: [:index, :show]
   
   def index
     @songs = Song.all

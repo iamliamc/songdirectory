@@ -11,8 +11,9 @@ c1 = Comment.create(title: 'Baller', content: 'Pat is a baller he should write o
 c2 = Comment.create(title: 'Sucky', content: 'This one is lame', song_id: s2.id)
 c3 = Comment.create(title: 'Tata', content: 'Boom boom boom I want you in my room', song_id: s1.id)
 c4 = Comment.create(title: 'Nanana', content: 'Creative text here', song_id: s2.id)
-co1 = Contributor.create(name: 'Liam Considine', band: 'Slow Tap', age: 26, bio: 'Untrained, torrenter, digitial media specialist and avid sample finder')
+co1 = Contributor.create(name: 'Liam Considine', band: 'Slow Tap', age: 26, bio: 'Self starter, digitial media specialist and avid sample finder')
 co2 = Contributor.create(name: 'George Bradley', band: 'TPB', age: 26, bio: 'Guitar under Fitz Greene, DIY specialist, fierce freestyler')
 co3 = Contributor.create(name: 'Patrick Morris', band: 'TPB', age: 26, bio: 'Never thought he could freestyle, raquet thrower in HS')
+u = User.create(first_name: 'Liam', last_name: 'Considine', email: 'ljc3179@gmail.com', password: 'testing123')
 s1.contributors << [co1, co2]
 s2.contributors << [co2, co3]
