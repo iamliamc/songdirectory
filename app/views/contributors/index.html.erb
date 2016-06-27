@@ -1,5 +1,6 @@
 <div class="container-fluid">
   <h1>Contributor Directory</h1>
+  <%= link_to 'New Contributor', new_contributor_path, :class => "btn btn-primary", :type => "button" %><br><br>
   <% @contributors.each do |c| %> 
   <div class="contributor"> 
     <h2>Name: <%= link_to c.name, c %> </h2>

@@ -1,20 +1,19 @@
-<div class="login">
-	<div class="container">
-		<div class="form">
-      <div>
-        <% if flash[:error] %>
-          <p class='error'><%= flash[:error] %></p>
-        <%end%>
-      </div>
-      <h1>Log in</h1>
-      <!-- We use For the login form, we don't have a Session model, so we refer to the parameters shown. --> 
-			<%= form_for(:session, url: login_path) do |f| %> 
-      <%= f.email_field :email, :placeholder => "Email" %> 
-      <%= f.password_field :password, :placeholder => "Password" %> 
-      <%= f.submit "Log in", class: "btn-submit" %>
-      <% end %>
+<div class="container">
+  <h1>Welcome to Song Directory System v1!</h1>
+	<div class="form">
+    <div>
+      <% if flash[:error] %>
+        <p class='error'><%= flash[:error] %></p>
+      <%end%>
     </div>
-    <h3>If you are not a current user:</h3>
-    <%= link_to "Signup", 'signup' %>
-	</div>
+    <h1>Log in</h1>
+    <!-- We use For the login form, we don't have a Session model, so we refer to the parameters shown. --> 
+		<%= form_for(:session, url: login_path) do |f| %> 
+    <%= f.email_field :email, :placeholder => "Email" %> 
+    <%= f.password_field :password, :placeholder => "Password" %> 
+    <%= f.submit "Log in", class: "btn-submit" %>
+    <% end %>
+  </div>
+  <h3>If you are not a current user:</h3>
+  <%= link_to "Signup", 'signup' %>
 </div>

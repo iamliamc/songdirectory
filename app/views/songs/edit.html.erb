@@ -3,15 +3,15 @@
   <h1>Update <%= @songs.title %></h1>
       <%= form_for(@songs) do |f| %>
         <p><%= f.label :title %>:</p>
-        <p><%= f.text_field :title %></p>
+        <p><%= f.text_area :title %></p>
         <p><%= f.label :directory %>:</p>
-        <p><%= f.text_field :directory %></p>
+        <p><%= f.text_area :directory %></p>
         <p><%= f.label :tempo %>:</p>
-        <p><%= f.text_field :tempo %></p>
+        <p><%= f.text_area :tempo %></p>
         <p><%= f.label :key %>:</p>
-        <p><%= f.text_field :key %></p>
+        <p><%= f.text_area :key %></p>
         <p><%= f.label :sample %>:</p>
-        <p><%= f.text_field :sample%></p>
+        <p><%= f.text_area :sample%></p>
         <p><%= f.submit "Save changes"%></p>
       <% end %>
 </div>

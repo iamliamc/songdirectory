@@ -1,9 +1,9 @@
 <div class="container-fluid">
 <h1>Song Directory</h1>
+  <%= link_to 'New Song', '/songs/new', :class => "btn btn-primary", :type => "button" %><br><br>
   <% @songs.each do |song| %> 
     <div class="song"> 
       <p class="content">TITLE: <%= link_to song.title, song%> ID: <%=song.id%></p>
     </div> 
   <% end %><br><br>
-    <%= link_to 'New Song', '/songs/new' %>
 </div>

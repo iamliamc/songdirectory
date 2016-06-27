@@ -1,29 +1,20 @@
-<div class="header">
-  <div class="container">
-    <h1>Add Song Page</h1>
-  </div>
-</div>
-
-<div class="song">
-  <div class="container">
-<%= form_for(@songs) do |f| %>  
-  <div class="field"> 
-    <%= f.label :title %><br> 
-    <%= f.text_area :title %><br>
-    <%= f.label :directory %><br> 
-    <%= f.text_area :directory %><br>
-    <%= f.label :tempo %><br> 
-    <%= f.text_area :tempo %><br>
-    <%= f.label :key %><br> 
-    <%= f.text_area :key %><br>
-    <%= f.label :sample %><br> 
-    <%= f.text_area :sample %><br>
+<div class="container-fluid">
+  <h1>Add Song Page</h1>
+    <%= form_for(@songs) do |f| %>  
+        <%= f.label :title %><br> 
+        <%= f.text_area :title %><br>
+        <%= f.label :directory %><br> 
+        <%= f.text_area :directory %><br>
+        <%= f.label :tempo %><br> 
+        <%= f.text_area :tempo %><br>
+        <%= f.label :key %><br> 
+        <%= f.text_area :key %><br>
+        <%= f.label :sample %><br> 
+        <%= f.text_area :sample %><br>
         <!-- Want to be able to add contributors upon creation of new song -->
-    <!-- # f.collection_select :contributor, @contributors, :id, :name, include_blank: false -->
-  </div> 
-  <div class="actions"> 
-    <%= f.submit "Create" %> 
-  </div> 
-<% end %>
-  </div>
+        <!-- # f.collection_select :contributor, @contributors, :id, :name, include_blank: false -->
+      <div class="actions"> 
+        <%= f.submit "Create" %> 
+      </div> 
+    <% end %>
 </div>
