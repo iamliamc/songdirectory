@@ -1,23 +1,16 @@
-<div class="header">
-  <div class="container">
-    <h1>Contributor</h1>
+<div class="container-fluid">
+<h1>Contributor</h1>
+  <div class="contributor"> 
+    <h2 class="content"><%= @contributor.name %></h2>
+    <p class="content">Age: <%= @contributor.age %></p>
+    <p class="content">Current Band: <%= @contributor.band %></p>
+    <p class="content">Contributor ID: <%= @contributor.id %></p>
+    <p class="content">Bio: <%= @contributor.bio %></p> 
+    <%= link_to "Delete Contributor", @contributor, method: :delete,
+                                         data: { confirm: "You sure?" } %>
+    <h2>Songs:</h2>
+    <% @contributor.songs.each do |song| %>
+    <p class="content">TITLE: <%= link_to song.title, song%> ID: <%=song.id%></p>
+    <% end %>
   </div>
-</div>
-
-<div class="comment">
-  <div class="container">
-<div class="comment"> 
-  <h2 class="content"><%= @contributor.name %></h2>
-  <p class="content">Age: <%= @contributor.age %></p>
-  <p class="content">Current Band: <%= @contributor.band %></p>
-  <p class="content">Contributor ID: <%= @contributor.id %></p>
-  <p class="content">Bio: <%= @contributor.bio %></p> 
-  <%= link_to "Delete Contributor", @contributor, method: :delete,
-                                       data: { confirm: "You sure?" } %>
-  <h3>Songs:</h3>
-  <% @contributor.songs.each do |song| %>
-  <p class="content">TITLE: <%= link_to song.title, song%> ID: <%=song.id%></p>
-  <% end %>
-</div>
-</div>
 </div>

@@ -1,40 +1,31 @@
-<div class="header">
-  <div class="container">
-    <h1>Song Directory</h1>
-  </div>
-</div>
+<div class="container-fluid">
+  <h1><%= @songs.title %></h1>
+    <div class="song"> 
+      <p class="content"></p>
+      <p class="content"><%= @songs.directory %></p>
+      <p class="content"><%= @songs.tempo %></p> 
+      <p class="content"><%= @songs.key %></p>
+      <p class="content"><%= @songs.sample %></p>
+      <p class="content"><%= @songs.id %></p> 
+      <p class="time"><%= @songs.created_at %></p> 
+    </div>
+    <%= link_to "Delete", @songs, method: :delete,
+                                         data: { confirm: "You sure?" } %>
+    <%= link_to "Edit", [:edit, @songs] %><br>
 
-<div class="song">
-  <div class="container">
-
-<div class="song"> 
-  <p class="content"><%= @songs.title %></p>
-  <p class="content"><%= @songs.directory %></p>
-  <p class="content"><%= @songs.tempo %></p> 
-  <p class="content"><%= @songs.key %></p>
-  <p class="content"><%= @songs.sample %></p>
-  <p class="content"><%= @songs.id %></p> 
-  <p class="time"><%= @songs.created_at %></p> 
-</div>
-  <%= link_to "Delete", @songs, method: :delete,
-                                       data: { confirm: "You sure?" } %>
-  <%= link_to "Edit", [:edit, @songs] %>
-</div>
-<h2>Contributors</h2>
-<% @contributors.each do |c| %>
-<p class="content"> <%= link_to c.name, c%></p>
-<%#= link_to "Delete", Part.where(contributor_id: c.id, song_id: @songs.id), method: delete, data: {confirm: "You sure?"} %>
-<%= link_to "Delete", {:controller => :parts, :action => 'destroy', :id => Part.find_by(contributor_id: c.id, song_id: @songs.id) }, :method => :delete, data: { confirm: "You sure?" } %>
-<%end%>
-
-<h2>Comments</h2>
-<% @comments.each do |c| %>
-  <div>
-  <p>Title: <%= c.title%></p>
-  <p>Body: <br><%= c.content%></p>
-  <p><%= link_to "Edit", edit_comment_path(c) %></p>
-  <p><%= link_to "Delete", c, method: :delete, data: { confirm: "You sure?" } %></p>
-  </div>
-<%end%>
-<div><%= link_to "New Comment", new_comment_path(song_id: @songs.id, song_title: @songs.title)%></div>
+  <h2>Contributors</h2>
+  <% @contributors.each do |c| %>
+  <p class="content"> <%= link_to c.name, c%></p>
+  <%= link_to "Delete", {:controller => :parts, :action => 'destroy', :id => Part.find_by(contributor_id: c.id, song_id: @songs.id) }, :method => :delete, data: { confirm: "You sure?" } %>
+  <%end%>
+  <h2>Comments</h2>
+  <% @comments.each do |c| %>
+    <div>
+    <p>Title: <%= c.title%></p>
+    <p>Body: <br><%= c.content%></p>
+    <p><%= link_to "Edit", edit_comment_path(c) %></p>
+    <p><%= link_to "Delete", c, method: :delete, data: { confirm: "You sure?" } %></p>
+    </div>
+  <%end%>
+  <div><%= link_to "New Comment", new_comment_path(song_id: @songs.id, song_title: @songs.title)%></div>
 </div>

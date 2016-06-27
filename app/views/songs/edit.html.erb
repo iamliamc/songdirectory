@@ -1,27 +1,17 @@
 <% provide(:title, "Edit Song") %>
-<h1>Update the Song</h1>
-
-<div class="row">
-  <div >
-    <%= form_for(@songs) do |f| %>
-
-      <%= f.label :title %>
-      <%= f.text_field :title %>
-
-      <%= f.label :directory %>
-      <%= f.text_field :directory %>
-
-      <%= f.label :tempo %>
-      <%= f.text_field :tempo %>
-      
-      <%= f.label :key %>
-      <%= f.text_field :key %>
-      
-      <%= f.label :sample %>
-      <%= f.text_field :sample%>
-
-      <%= f.submit "Save changes"%>
-    <% end %>
-
-  </div>
+<div class="container-fluid">
+  <h1>Update <%= @songs.title %></h1>
+      <%= form_for(@songs) do |f| %>
+        <p><%= f.label :title %>:</p>
+        <p><%= f.text_field :title %></p>
+        <p><%= f.label :directory %>:</p>
+        <p><%= f.text_field :directory %></p>
+        <p><%= f.label :tempo %>:</p>
+        <p><%= f.text_field :tempo %></p>
+        <p><%= f.label :key %>:</p>
+        <p><%= f.text_field :key %></p>
+        <p><%= f.label :sample %>:</p>
+        <p><%= f.text_field :sample%></p>
+        <p><%= f.submit "Save changes"%></p>
+      <% end %>
 </div>
