@@ -15,5 +15,6 @@ co1 = Contributor.create(name: 'Liam Considine', band: 'Slow Tap', age: 26, bio:
 co2 = Contributor.create(name: 'George Bradley', band: 'TPB', age: 26, bio: 'Guitar under Fitz Greene, DIY specialist, fierce freestyler')
 co3 = Contributor.create(name: 'Patrick Morris', band: 'TPB', age: 26, bio: 'Never thought he could freestyle, raquet thrower in HS')
 u = User.create(first_name: 'Liam', last_name: 'Considine', email: 'ljc3179@gmail.com', password: 'testing123', role: 'admin')
+u2 = User.create(first_name: 'George', last_name: 'Bradley', email: 'gfb@gfb.com', password: 'testing123', role: 'editor')
 s1.contributors << [co1, co2]
 s2.contributors << [co2, co3]

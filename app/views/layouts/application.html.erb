@@ -10,7 +10,10 @@
 <h2>Navigation:</h2>
 <div class="nav">
   <%= link_to "Songs", index_path%><br>
-  <%= link_to "Contributors", contributors_path%>
+  <%= link_to "Contributors", contributors_path%><br>
+  <% if current_user && current_user.admin? %> 
+  <%= link_to "Users Page", users_path %> 
+  <% end %>
 </div>
 <div class="user_status">
   <% if current_user %> 
