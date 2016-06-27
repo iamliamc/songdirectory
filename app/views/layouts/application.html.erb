@@ -9,8 +9,8 @@
 <% if controller_name != "sessions" and controller_name != "users"%>
 <h2>Navigation:</h2>
 <div class="nav">
-  <%= link_to "Songs", 'songs'%><br>
-  <%= link_to "Contributors", 'contributors'%>
+  <%= link_to "Songs", index_path%><br>
+  <%= link_to "Contributors", contributors_path%>
 </div>
 <div class="user_status">
   <% if current_user %> 
