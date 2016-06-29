@@ -1,5 +1,8 @@
 == README
 
+Working through using RSPEC on corresponding branch: 
+http://everydayrails.com/2012/03/12/testing-series-rspec-setup.html
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
