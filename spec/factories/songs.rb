@@ -6,6 +6,6 @@ FactoryGirl.define do
     s.tempo { Faker::Number.number(3) }
     s.directory { 'C:\Program Files\Test\Project1.rdp' }
     s.sample { Faker::Name.last_name }
-    s.key { 'C' }
+    s.key { 'C Major' }
   end
 end

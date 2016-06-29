@@ -1,9 +1,29 @@
 <div class="container-fluid">
-<h1>Song Directory</h1>
+  <h1>Song Directory</h1>
   <%= link_to 'New Song', '/songs/new', :class => "btn btn-primary", :type => "button" %><br><br>
-  <% @songs.each do |song| %> 
-    <div class="song"> 
-      <p class="content">TITLE: <%= link_to song.title, song%> ID: <%=song.id%></p>
+  <div class="panel panel-default">
+    <div class="panel-heading">Current Listings</div>
+      <table class="table">
+        <tr>
+          <td>Song #:</td>
+          <td>Title:</td>
+          <td>Project Directory:</td>
+          <td>Tempo:</td>
+          <td>Key:</td>
+          <td>Sample:</td>
+        </tr>
+        <% @songs.each do |song| %> 
+          <tr class="song">
+            <td><%= song.id %></td>
+            <td><%= link_to song.title, song%></td>
+            <td><%= song.directory %></td>
+            <td><%= song.tempo %></td>
+            <td><%= song.key %></td>
+            <td><%= song.sample %></td>
+          </tr> 
+        <% end %>
+      </table>
     </div> 
-  <% end %><br><br>
 </div>
+
+

@@ -1,17 +1,31 @@
 <div class="container-fluid">
   <h1><%= @songs.title %></h1>
     <div class="song"> 
-      <p class="content"></p>
-      <p class="content"><%= @songs.directory %></p>
-      <p class="content"><%= @songs.tempo %></p> 
-      <p class="content"><%= @songs.key %></p>
-      <p class="content"><%= @songs.sample %></p>
-      <p class="content"><%= @songs.id %></p> 
-      <p class="time"><%= @songs.created_at %></p> 
+    <table class="table">
+      <tr>
+        <td>Song #:</td>
+        <td>Title:</td>
+        <td>Project Directory:</td>
+        <td>Tempo:</td>
+        <td>Key:</td>
+        <td>Sample:</td>
+        <td>Created On:</td>
+      </tr>
+      <tr>
+        <td class="content"><%= @songs.id %></td> 
+        <td class="content"><%= @songs.title %></td>
+        <td class="content"><%= @songs.directory %></td>
+        <td class="content"><%= @songs.tempo %></td> 
+        <td class="content"><%= @songs.key %></td>
+        <td class="content"><%= @songs.sample %></td>
+        <td class="time"><%= @songs.created_at %></td> 
+      </tr>
+    </table>
     </div>
-    <%= link_to "Delete", @songs, method: :delete,
+    <%= link_to "Edit", [:edit, @songs], :class => "btn btn-warning", :type => "button" %>
+    <%= link_to "Delete", @songs, :class => "btn btn-danger", :type => "button", method: :delete,
                                          data: { confirm: "You sure?" } %>
-    <%= link_to "Edit", [:edit, @songs] %><br>
+    <br>
 
   <h2>Contributors</h2>
   <% @contributors.each do |c| %>
