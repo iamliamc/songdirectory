@@ -28,18 +28,25 @@
     <br>
 
   <h2>Contributors</h2>
+  <div class="row">
   <% @contributors.each do |c| %>
-  <p class="content"> <%= link_to c.name, c%></p>
-  <%= link_to "Delete", {:controller => :parts, :action => 'destroy', :id => Part.find_by(contributor_id: c.id, song_id: @songs.id) }, :method => :delete, data: { confirm: "You sure?" } %>
+  <div class="col-md-4"> 
+  <h3><%= link_to c.name, c%></h3>
+  <%= link_to "Remove Contributor", {:controller => :parts, :action => 'destroy', :id => Part.find_by(contributor_id: c.id, song_id: @songs.id)}, :class => "btn btn-danger", :type => "button", :method => :delete, data: { confirm: "You sure?" } %>
+  </div>
   <%end%>
+  </div>
   <h2>Comments</h2>
   <% @comments.each do |c| %>
-    <div>
-    <p>Title: <%= c.title%></p>
-    <p>Body: <br><%= c.content%></p>
-    <p><%= link_to "Edit", edit_comment_path(c) %></p>
-    <p><%= link_to "Delete", c, method: :delete, data: { confirm: "You sure?" } %></p>
+    <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Comment Title: <%= c.title%></h3>
+    </div>
+    <div class="panel-body"><%= c.content%></div><br>
+    <div class="panel-body"><%= link_to "Edit", edit_comment_path(c), :class => "btn btn-warning", :type => "button" %></div>
+    <div class="panel-body"><%= link_to "Delete", c, method: :delete, data: { confirm: "You sure?" }, :class => "btn btn-danger", :type => "button" %></div>
     </div>
   <%end%>
-  <div><%= link_to "New Comment", new_comment_path(song_id: @songs.id, song_title: @songs.title)%></div>
+
+  <div><%= link_to "New Comment", new_comment_path(song_id: @songs.id, song_title: @songs.title), :class => "btn btn-primary", :type => "button"%></div>
 </div>
