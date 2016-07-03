@@ -15,6 +15,11 @@ class SongsController < ApplicationController
     @songs = Song.find(params[:id])
     @comments = @songs.comments
     @contributors = @songs.contributors
+    respond_to do |format|
+      format.html #show.html.erb
+      format.json {render json: @songs}
+      format.xml {render xml: @songs}
+    end
   end
   
   def destroy

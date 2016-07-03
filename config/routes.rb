@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get '/songs' => 'songs#index', as: :index
   get '/songs/new' => 'songs#new'
   post '/songs' => 'songs#create'
+  #Example of if app was redesigned and lots of links pointed to site/all and we needed to redirect
+  get '/all' => redirect('/songs')
   get '/signup'  => 'users#new' 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

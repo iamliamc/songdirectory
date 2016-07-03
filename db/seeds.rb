@@ -23,7 +23,7 @@ u = User.create(first_name: 'Liam', last_name: 'Considine', email: 'ljc3179@gmai
 u2 = User.create(first_name: 'George', last_name: 'Bradley', email: 'gfb@gfb.com', password: 'testing123', role: 'editor')
 u3 = User.create(first_name: 'James', last_name: 'Thomas', email: 'jamest@london.com', password: 'testing123', role: 'default')
 
-s1.contributors << [co1, co2]
-s2.contributors << [co2, co3]
-s3.contributors << [co4, co3]
-s4.contributors << [co4, co3]
+s1.contributors << [co1, co2, co3]
+s2.contributors << [co2, co3, co1]
+s3.contributors << [co4, co3, co1]
+s4.contributors << [co4, co3, co1]

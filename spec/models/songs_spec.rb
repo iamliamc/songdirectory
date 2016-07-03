@@ -5,7 +5,7 @@ require 'factory_girl_rails'
   #pending "add some examples to (or delete) #{__FILE__}"
 describe Song do
   it "has valid song column entries" do
-    FactoryGirl.create(:song).should be_valid
+    expect(FactoryGirl.create(:song)).to be_valid
   end
   #it "has a valid directory"
   #it "has a valid tempo"
