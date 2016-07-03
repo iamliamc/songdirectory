@@ -11,10 +11,18 @@
 # a separate helper file that requires the additional dependencies and performs
 # the additional setup, and require it from the spec files that actually need
 # it.
-#
+require 'capybara/rspec'
 # The `.rspec` file also contains a few flags that are not defaults but that
 # users commonly want.
 #
+
+
+def login(user)
+  user = User.where(:login => user.to_s).first if user.is_a?(Symbol)
+  session[:user] = user.id
+end
+
+
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate

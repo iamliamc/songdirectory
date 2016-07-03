@@ -29,10 +29,13 @@ gem 'bcrypt', '~> 3.1.7'
 #Use RSPEC BDD testing framework
 gem 'rspec-rails'
 gem 'factory_girl_rails'
-gem 'faker'
-gem 'capybara'
+gem 'faker', '~> 1.6.3'
+#gem 'capybara'
 gem 'guard-rspec'
 gem 'launchy'
+
+#Attach audio with paperclip
+gem "paperclip", "~> 4.2"
 
 
 gem 'bootstrap-sass',       '3.2.0.0'
@@ -46,11 +49,17 @@ gem 'bootstrap-sass',       '3.2.0.0'
 group :development do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'faker'
+  #gem 'faker'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'capybara'
 end
 
+group :test do
+  gem 'shoulda-matchers', '~> 3.0', require: false
+  gem 'database_cleaner', '~> 1.5'
+  gem 'capybara'
+end
